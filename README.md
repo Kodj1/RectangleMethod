@@ -18,9 +18,13 @@ This project is designed to compute definite integrals using the rectangle metho
     ```bash
     cd ~/RectangleMethod
     ```
-3. Run the program:
+3. Compile the project:
     ```bash
-    ./main
+    g++ -o integration main.cpp integration_methods.cpp function.cpp input_validation.cpp
+    ```
+4. Run the program:
+    ```bash
+    ./integration
     ```
 
 ## Usage
