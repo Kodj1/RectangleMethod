@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Проверка на корректный ввод числового значения
+// Проверка на корректный ввод числового значения (для вещественных чисел)
 double getValidatedInput(const string& prompt) {
     double value;
     while (true) {
@@ -20,6 +20,25 @@ double getValidatedInput(const string& prompt) {
         }
     }
 }
+
+// Проверка на корректный ввод целого числа n (для количества отрезков разбиения)
+int getValidatedSegments(const string& prompt) {
+    int n;
+    while (true) {
+        cout << prompt;
+        cin >> n;
+
+        // Проверка на ошибки ввода или некорректное значение
+        if (cin.fail() || n <= 0 || n >= 1000) {
+            cout << "Ошибка ввода. Пожалуйста, введите положительное целое число для n.\n";
+            cin.clear(); // Очистка флага ошибки
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Пропуск некорректного ввода
+        } else {
+            return n; // Корректное значение возвращается
+        }
+    }
+}
+
 
 // Проверка на корректный выбор функции
 int getFunctionChoice() {

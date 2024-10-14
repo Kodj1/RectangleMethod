@@ -19,7 +19,7 @@ int main() {
             b = getValidatedInput("Введите верхний предел интегрирования b: ");
         }
 
-        int n = getValidatedInput("Введите количество отрезков разбиения n: ");
+        int n = getValidatedSegments("Введите количество отрезков разбиения n: ");
 
         int methodChoice = getMethodChoice();
 
